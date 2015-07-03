@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <form action="post" method="post">
+            <input type="text" name="content" id="content">
+            <input type="text" name="urls[1]">
+            <input type="text" name="urls[2]">
+            <input type="text" name="uid" value="1">
+            <input type="submit">
+        </form>
+
+        <div class="feed-activity-list">
+            {{range .posts}}
+            <div class="feed-element">
+                <a href="profile.html#" tppabs="http://www.zi-han.net/theme/hplus/profile.html#" class="pull-left">
+                <img alt="image" class="img-circle" src="img/a1.jpg" tppabs="http://www.zi-han.net/theme/hplus/img/a1.jpg">
+                </a>
+                <div class="media-body ">
+                    <strong>{{.User.Nickname}}</strong> 说 <strong>{{.Content}}</strong>.
+                    <br>
+                    <small class="text-muted">{{.CreateAt}}</small>
+                    <div class="actions">
+                    	{{range .Imgs}}
+                        <img src="{{.}}">
+                    	{{end}}
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </body>
+</html>

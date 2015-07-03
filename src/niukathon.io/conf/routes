@@ -23,5 +23,9 @@ GET     /public/*filepath                       Static.Serve("public")
 #GET     /event/:id                              Event.Show
 #POST    /event/:id                              Event.Update
 
+# Post Managment
+GET		/post 									PostMgr.ShowAllMsg
+Post 	/post 									PostMgr.PostMsg
+
 # Catch all
 *       /:controller/:action                    :controller.:action
